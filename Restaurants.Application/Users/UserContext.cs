@@ -29,7 +29,7 @@ namespace Restaurants.Application.Users
             var dateofBirthString = user.FindFirst(c => c.Type == "DateOfBrith")?.Value;
             var dateofBirth = dateofBirthString == null ? (DateOnly?)null : DateOnly.ParseExact(dateofBirthString, "yyyy-MM-dd");
 
-            return new CurrentUser(userId, email, roles, dateofBirthString, dateofBirth);
+            return new CurrentUser(userId, email, roles, nationality, dateofBirth);
 
         }
     }

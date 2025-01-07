@@ -17,7 +17,7 @@ public class RestaurantsProfile : Profile
                 PostalCode = src.PostalCode,
                 Street = src.Street
             }));
-
+            
         CreateMap<Restaurant, RestaurantDto>()
             .ForMember(d => d.City, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.City))
             .ForMember(d => d.PostalCode, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.PostalCode))

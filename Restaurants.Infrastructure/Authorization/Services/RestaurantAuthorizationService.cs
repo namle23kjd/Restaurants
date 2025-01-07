@@ -21,7 +21,7 @@ public class RestaurantAuthorizationService(ILogger<RestaurantAuthorizationServi
             logger.LogInformation("Admin user, delete operation - successful authorization");
             return true;
         }
-        if (resourceOperation == ResourceOperation.Delete || resourceOperation == ResourceOperation.Update && user.id == restaurant.OwnerId)
+        if (resourceOperation == ResourceOperation.Delete || resourceOperation == ResourceOperation.Update && user.Id == restaurant.OwnerId)
         {
             logger.LogInformation("Restaurant owner - successful authorizaiotn");
             return true;

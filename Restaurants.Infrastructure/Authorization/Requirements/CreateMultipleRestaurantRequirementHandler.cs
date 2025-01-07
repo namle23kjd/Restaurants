@@ -10,7 +10,7 @@ internal class CreateMultipleRestaurantRequirementHandler(IRestaurantsRepository
     {
         var currentUser = userContext.GetCurrentUser();
         var restaurants =  await restaurantsRepository.GetAllAsync();
-        var userRestaurantsCreate = restaurants.Count(r => r.OwnerId == currentUser!.id);
+        var userRestaurantsCreate = restaurants.Count(r => r.OwnerId == currentUser!.Id);
         if(userRestaurantsCreate >= requirement.MinimumRestaurantCreated)
         {
             context.Succeed(requirement);
